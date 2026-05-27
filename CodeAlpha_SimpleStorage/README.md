@@ -1,51 +1,37 @@
-# 🔷 Simple Storage Smart Contract — CodeAlpha Task 1
+# Simple Storage Smart Contract
 
-A beginner-friendly Solidity smart contract that demonstrates state variable 
-management with increment, decrement, set, and read functionality on the Ethereum blockchain.
+A Solidity smart contract demonstrating state variable management with basic arithmetic and read/write functionality on the Ethereum blockchain. Developed as Task 1 for the CodeAlpha Blockchain Internship.
 
-## 📋 Features
-- Store an integer value on-chain
-- Increment the value by 1
-- Decrement the value by 1 (with underflow protection)
-- Set any custom value
-- Read the current value (public visibility)
-- Reset the value to zero
-- Emits events for every state change
+## Features
+- Store and manage an integer value on-chain.
+- Increment and decrement functionality (with underflow protection).
+- Set custom values and reset to zero.
+- Public visibility for current state reading.
+- Event emission for complete state change tracking.
 
-## 🛠️ Tech Stack
-- Solidity ^0.8.0
-- Remix IDE
-- Ethereum (Sepolia Testnet)
+## Tech Stack
+- **Language:** Solidity ^0.8.0
+- **Environment:** Remix IDE / Ethereum (Sepolia Testnet)
 
-## 🚀 Deployment Steps
+## Deployment & Testing
 
-### Using Remix IDE
-1. Open [https://remix.ethereum.org](https://remix.ethereum.org)
-2. Create a new file: `SimpleStorage.sol`
-3. Paste the contract code
-4. Go to **Solidity Compiler** tab → Select version `0.8.0` → Click **Compile**
-5. Go to **Deploy & Run Transactions** tab
-6. Select Environment: `Remix VM (Cancun)` for local testing
-7. Click **Deploy**
-8. Test all functions in the deployed contract panel
+1. Open [Remix IDE](https://remix.ethereum.org).
+2. Create a new file named `SimpleStorage.sol` and paste the contract code.
+3. Navigate to the **Solidity Compiler** tab, select version `0.8.0`, and compile.
+4. Navigate to the **Deploy & Run Transactions** tab.
+5. Select Environment: `Remix VM (Cancun)`.
+6. Click **Deploy** and interact with the contract functions.
 
-## 🧪 Test Cases
+## Test Cases
+
 | Function | Input | Expected Result |
 |----------|-------|----------------|
-| `getValue()` | — | `0` (initial) |
-| `increment()` | — | `storedValue = 1` |
-| `increment()` | — | `storedValue = 2` |
-| `decrement()` | — | `storedValue = 1` |
-| `setValue(10)` | `10` | `storedValue = 10` |
-| `reset()` | — | `storedValue = 0` |
-| `decrement()` at 0 | — | ❌ Reverts with error |
+| `getValue()` | None | `0` (initial state) |
+| `increment()` | None | `storedValue = 1` |
+| `decrement()` | None | `storedValue = 0` |
+| `decrement()` (at 0) | None | Transaction reverts |
+| `setValue(42)` | `42` | `storedValue = 42` |
+| `reset()` | None | `storedValue = 0` |
 
-## 📸 Contract Functions
-- `increment()` — Adds 1 to stored value
-- `decrement()` — Subtracts 1 (reverts at 0)
-- `setValue(uint256)` — Sets a specific value
-- `getValue()` — Returns current value
-- `reset()` — Resets to 0
-
-## 📄 License
-MIT License — CodeAlpha Internship 2026
+## License
+MIT License
