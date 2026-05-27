@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 /// @title SimpleStorage - CodeAlpha Internship Task 1
-/// @author Your Name
+/// @author Ajit Sharma
 /// @notice A simple smart contract to store, increment and decrement an integer value
 /// @dev Demonstrates basic Solidity state variable management and functions
 
